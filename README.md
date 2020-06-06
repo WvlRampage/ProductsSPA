@@ -1,3 +1,3 @@
 # ProductsSPA
 
-# Is a basic SPA for a company test
+Is a basic SPA for a company test
