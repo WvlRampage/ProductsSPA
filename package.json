@@ -1,0 +1,26 @@
+{
+  "name": "diesequistest",
+  "version": "1.0.0",
+  "description": "productsSPA",
+  "main": "index.js",
+  "scripts": {
+    "test": "develop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WvlRampage/ProductsSPA.git"
+  },
+  "keywords": [
+    "prodSPa"
+  ],
+  "author": "Yeison Gerardo Ruiz Duarte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WvlRampage/ProductsSPA/issues"
+  },
+  "homepage": "https://github.com/WvlRampage/ProductsSPA#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1"
+  }
+}
