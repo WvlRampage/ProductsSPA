@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="node_modules/datatables.net-dt/css/jquery.dataTables.css">
+
+
+
 </head>
 
 <body>
@@ -128,60 +132,73 @@
     <section id="Products" class="pd-top">
         <article>
             <div class="container box-content">
-                <h1 class="pb-5 text-center">Conoce nuestros principales productos</h1>
-                <div class="row text-center">
-                    
-                    <div class="col-sm-4">.col-sm-3</div>
-                    <div class="col-sm-4">.col-sm-3</div>
-                    <div class="col-sm-4">.col-sm-3</div>
-                    <div class="col-sm-4">.col-sm-3</div>
-                    <div class="col-sm-4">.col-sm-3</div>
-                    <div class="col-sm-4">.col-sm-3</div>
-                    <div class="col-sm-4">.col-sm-3</div>
-                    <div class="col-sm-4">.col-sm-3</div>
-                    <div class="col-sm-4">.col-sm-3</div>                    
+                <h1 class="pb-5 text-center">Noticias Principales</h1>
+                <div class="row text-center" id='notices'>
                 </div>
-                   
-                <button value=${item.questionid} id="btnAnswer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Responder</button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Responder Preguntas</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <div class="card shadow mb-4">
-                          <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Gestión</h6>
-                          </div>
-                          <div class="card-body">
-                            <div class="table-responsive">
-                              <table class="table table-bordered" id="dataTablNueva" width="100%" cellspacing="0">
-                                
-                                <thead><tr><th>Id</th><th>Nombre</th><th>Pregunta</th><th>Producto</th><th>Link Producto</th><th>Fecha</th> <th>Accion</th></tr></thead>
-                             
-                              </table>
+                <div class="text-center pd-top">
+                    <button id="btnMore" type="button" onclick="expand()" class="btn btn-primary" data-toggle="modal"
+                        data-target="#moreModal">Ver más</button>
+                </div>
+
+                <div class="modal fade bd-example-modal-lg" id="moreModal" tabindex="-1" role="dialog"
+                    aria-labelledby="moreModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="moreModalLabel">Productos Principales</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                          </div>
+                            <div class="modal-body">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">Productos</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table id="example" class="display" style="width:100%">
+                                                <thead>
+                                                    <tr>                                                        
+                                                        <th>Imagen</th>
+                                                        <th>Titulo</th>
+                                                        <th>Descripcion</th>                                                        
+                                                        <th>Contenido</th>
+                                                        <th>Fecha</th>
+                                                        <th>Nombre</th>
+                                                        <th>Autor</th>                                                        
+                                                        <th>URL</th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>                                                        
+                                                        <th>Imagen</th>
+                                                        <th>Titulo</th>
+                                                        <th>Descripcion</th>                                                        
+                                                        <th>Contenido</th>                                                        
+                                                        <th>Fecha</th>
+                                                        <th>Nombre</th>
+                                                        <th>Autor</th>                                                       
+                                                        <th>URL</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      </div>
-                      
                     </div>
-                  </div>
                 </div>
-                     
-                
             </div>
         </article>
     </section>
+
+  
     <footer id='Contacto' class="pd-top">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-12">
+                <div class="w-100">
                     <span class="anchor" id="formContact"></span>
                     <!-- form contact -->
                     <div class="card card-outline-secondary">
@@ -232,6 +249,8 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="javascript/index.js"></script>
     <script>
         $('.carousel').carousel({
             interval: 6000,

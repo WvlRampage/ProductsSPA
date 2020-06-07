@@ -23,3 +23,12 @@ body{
     border-radius: 5px;
 }
 
+.imgNotice{
+    height: 250px;
+    width: 300px;
+}
+
+.imgNoticeResp{
+    height: 100%;
+    width: 90%;   
+}
