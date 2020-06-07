@@ -40,13 +40,8 @@ function expand() {
         }
     }
 }
-
-
-$(document).ready(function () {
-
+    /*call the funciton to get the data from json */
     getData();
-
-})
 
 function getData() {
     const xhttp = new XMLHttpRequest();
@@ -56,15 +51,13 @@ function getData() {
     xhttp.send();
 
     xhttp.onreadystatechange = function () {
-
-
         if (this.readyState == 4 && this.status == 200) {
             let datos = JSON.parse(this.responseText)
             let data = datos.articles;
-            console.log(data)
             let info = document.querySelector('#notices')
             info.innerHTML = '';
 
+            /* this for loop print the data into section productos*/
             for (i = 0; i < 3; i++) {
                 info.innerHTML += `<div class="col-sm-4 pb-3"><div ><h6 class='text-center' style='height:70px;'>${data[i].title}</h6></div><div><img src='${data[i].urlToImage}' class='imgNoticeResp'></img></div>
                 <div style='padding-top:20px'><p class='text-justify'>${data[i].description}</p></div></div>`;
