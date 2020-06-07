@@ -128,20 +128,53 @@
     <section id="Products" class="pd-top">
         <article>
             <div class="container box-content">
-                <div class="row justify-content-center">
-                    <div class="col-xs-10 col-sm-10 text-justify">
-                        <h1 class="pt-5 pb-5 text-center">Conoce nuestros principales productos</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora perspiciatis dolore, ipsum quis non
-                            inventore totam illo perferendis tempore impedit? Similique eligendi fugit dolore dolores natus
-                            unde. Aspernatur, cumque perferendis.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora perspiciatis dolore, ipsum quis non
-                            inventore totam illo perferendis tempore impedit? Similique eligendi fugit dolore dolores natus
-                            unde. Aspernatur, cumque perferendis.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora perspiciatis dolore, ipsum quis non
-                            inventore totam illo perferendis tempore impedit? Similique eligendi fugit dolore dolores natus
-                            unde. Aspernatur, cumque perferendis.</p>
-                    </div>
+                <h1 class="pb-5 text-center">Conoce nuestros principales productos</h1>
+                <div class="row text-center">
+                    
+                    <div class="col-sm-4">.col-sm-3</div>
+                    <div class="col-sm-4">.col-sm-3</div>
+                    <div class="col-sm-4">.col-sm-3</div>
+                    <div class="col-sm-4">.col-sm-3</div>
+                    <div class="col-sm-4">.col-sm-3</div>
+                    <div class="col-sm-4">.col-sm-3</div>
+                    <div class="col-sm-4">.col-sm-3</div>
+                    <div class="col-sm-4">.col-sm-3</div>
+                    <div class="col-sm-4">.col-sm-3</div>                    
                 </div>
+                   
+                <button value=${item.questionid} id="btnAnswer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Responder</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Responder Preguntas</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="card shadow mb-4">
+                          <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Gestión</h6>
+                          </div>
+                          <div class="card-body">
+                            <div class="table-responsive">
+                              <table class="table table-bordered" id="dataTablNueva" width="100%" cellspacing="0">
+                                
+                                <thead><tr><th>Id</th><th>Nombre</th><th>Pregunta</th><th>Producto</th><th>Link Producto</th><th>Fecha</th> <th>Accion</th></tr></thead>
+                             
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                     
+                
             </div>
         </article>
     </section>
