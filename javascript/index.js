@@ -40,8 +40,8 @@ function expand() {
         }
     }
 }
-    /*call the funciton to get the data from json */
-    getData();
+/*call the funciton to get the data from json */
+getData();
 
 function getData() {
     const xhttp = new XMLHttpRequest();
@@ -65,3 +65,45 @@ function getData() {
         }
     }
 }
+
+/* Search  */
+const paragraph = [
+    { content: 'Somos un equipo de personas que se ha unido como familia para apoyar la gestión de  abastecimiento, como proveedores y distribuidores de insumos, para el canal Food Service, Institucional, y HORECA   (hoteles,    restaurantes, catering, colegios, clubes, casinos).' },
+    { content: 'Lo que nos mueve es construir relaciones de confianza entre nuestros clientes, nuestros colaboradores, y nuestros proveedores. Y lo hacemos bajo el principio de innovación: buscamos nuevas oportunidades en el mercado, nos adelantamos a las tendencias de consumo, y nos apoyamos en una plataforma tecnológica de vanguardia.' },
+    { content: 'En DIEZ EQUIS nos orientamos a la calidad de nuestro servicio y al compromiso con nuestros clientes, es por eso que ofrecemos al mercado diferentes beneficios en pro de construir y brindar un servicio de calidad.' },
+    { content: 'Actualmente contamos con alcance a nivel nacional, en las principales ciudades del país.' },
+    { content: 'Estamos aquí para apoyarte a cumplir tus objetivos, y estamos comprometidos al éxito de tu negocio.' },
+    { content: 'En Diez Equis, “Crecemos Contigo”.' }
+]
+
+const formulary = document.querySelector('#searchInput');
+const btn = document.querySelector('#searchBtn');
+const result = document.querySelector('#result');
+const boxSearch = document.querySelector('#box-search')
+
+const filter = () => {
+    result.innerHTML = '';
+
+    const text = formulary.value.toLowerCase();
+    if (text !== '') {
+        boxSearch.style.display = 'block';
+        for (let txt of paragraph) {
+            let name = txt.content.toLowerCase();
+
+            if (name.indexOf(text) !== -1) {
+                result.innerHTML += `<li href='#Empresa class='pt-3'><a class="nav-link white-color" href="#Empresa">${txt.content}</a></li>`
+                
+            }
+        }
+        if (result.innerHTML === '') {
+            result.innerHTML += `<li'>Producto no encontrado...</li>`
+        }
+    }
+    else{
+        boxSearch.style.display = 'none';
+    }
+}
+
+btn.addEventListener('click', filter);
+formulary.addEventListener('keyup', filter)
+/*End Search */
